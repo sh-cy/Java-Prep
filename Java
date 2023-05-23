@@ -48,6 +48,7 @@ class Solution {
    *********************************
    LOGIC:
     Largest:
+    METHOD 1:
     let:{1,2,4,7,7,5}
     first find largest element and then take or intilize second=-1 and use for(i=0;i<arr.length;i++) as we took second=-1 we comapare -1 with all the
     elements like 1>-1 true 1>2 true 2>4 true 7>4 true but it is larger element so dont take that element next large 5>2 true so 5 is second large element
@@ -63,9 +64,25 @@ class Solution {
             if(arr[j]>second && arr[j]!=large){
                 second=arr[j];
             }
+        METHOD 2:
+        first take large=arr[0]
+        second=any min number so lets take second=0
+        large=1 intially second=1 do for loop 1>1 no so large and second is same next 2>1 yes then large=2 then 1 will be second large second=1
+        and 4>2 yes large=4 and second=2 7>2 yes second=4 and 7 is repated 5>7 no so large is 7 but we have to check 5 for second also is 7>second
+        yes then 4 is replaced with 5 now large=7 and second=5
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>large){
+                second=large///now if the pervious value can be second largest 
+                large=arr[i];
+            }
+            else if(arr[i]<large && arr[i]>second){
+                second=arr[i]
+                }
+        
       **********************************
-     SECOND LARGE CODE:
-      class Solution {
+     SECOND LARGE CODE: in this code we use 2 loops so its o(N+N)=O(2N) its complexity is large
+    CODE1:
+    class Solution {
     int print2largest(int arr[], int n) {
         int large=arr[0];
         int second=-1;
@@ -81,8 +98,29 @@ class Solution {
         }
        return second;
        }
-    } 
-    SECOND SMALL CODE:
+    }
+    CODE2:O(N) COMPLEXITY FOR THIS CODE
+   
+    class Solution {
+    int print2largest(int arr[], int n) {
+        int large=arr[0];
+        int second=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>large){
+                second=large;
+                large=arr[i];
+            }
+            else if(arr[i]<large && arr[i]>second){
+                second=arr[i];
+            }
+        }
+       return second; }
+    }
+     SECOND SMALL CODE:
+     
+    
+
+    
     
 
     
