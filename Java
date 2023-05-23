@@ -1,1 +1,90 @@
+Q)Largest Element in Array
+***************************
+LOGIC:
+large=arr[0]
+for(int i=0;i<arr.length;i++)
+if(arr[i]>large)
+large=arr[i]
+return large
+****************************
+CODE:
+class Compute {
+    
+    public int largest(int arr[], int n)
+    {
+            int large=arr[0];
+        for(int i=0;i<arr.length;i++){
+        if(arr[i]>large){
+            large=arr[i];
+        }
+        }
+        return large;
+    }
+    }
+**********************************************************************************************************************************************************
+Q)Remove Duplicates from Sorted Array
+*************************************
+LOGIC:
+let:{0,1,1,2,2,3,3,3}
+arr[0]=i
+arr[0]=j intially
+increment i then if i and j values are similar no change if different then increment j by 1 and assigin the i value to j 
+**************************************
+CODE:
+class Solution {
+    public int removeDuplicates(int[] nums) {
+     int j=0;
+     for(int i=0;i<nums.length;i++){
+       if(nums[i]!=nums[j]){
+         j++;
+         nums[j]=nums[i];
+       }
+     }
+     return j+1;
+     }
+    }
+    ****************************************************************************************************************************************************
+    Q)Find Second Smallest and Second Largest Element in an array
+   *********************************
+   LOGIC:
+    Largest:
+    let:{1,2,4,7,7,5}
+    first find largest element and then take or intilize second=-1 and use for(i=0;i<arr.length;i++) as we took second=-1 we comapare -1 with all the
+    elements like 1>-1 true 1>2 true 2>4 true 7>4 true but it is larger element so dont take that element next large 5>2 true so 5 is second large element
+    large logic :
+    int large=arr[0];
+    for(int i=0;i<arr.length;i++){
+            if(arr[i]>large){
+                large=arr[i];
+            }
+     second large logic:
+     int second=-1;
+     for(int j=0;j<arr.length;j++){
+            if(arr[j]>second && arr[j]!=large){
+                second=arr[j];
+            }
+      **********************************
+     SECOND LARGE CODE:
+      class Solution {
+    int print2largest(int arr[], int n) {
+        int large=arr[0];
+        int second=-1;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>large){
+                large=arr[i];
+            }
+        for(int j=0;j<arr.length;j++){
+            if(arr[j]>second && arr[j]!=large){
+                second=arr[j];
+            }
+        }
+        }
+       return second;
+       }
+    } 
+    SECOND SMALL CODE:
+    
 
+    
+   
+   
