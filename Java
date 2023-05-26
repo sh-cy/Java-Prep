@@ -117,7 +117,65 @@ class Solution {
        return second; }
     }
      SECOND SMALL CODE:
-     
+*******************************************************************************************************************************************************
+Q)Given an integer array nums, rotate the array to the right by k steps, where k is non-negative
+**************************************
+LOGIC:
+given:{1,2,3,4,5,6,7} and k=3 o/p:{5,6,7,4,3,2,1}--->right rotation
+step1:reverse whole orginal array--->{7,6,5,4,3,2,1}
+step2:as it is right rotation and k=3 first roate last 3 values ---->{5,6,7,4,3,2,1}
+step3: now rotate remaining values --->{5,6,7,4,3,2,1}
+***************************************
+CODE:
+class solution{
+   public void leftrotate(int nums[],int k){
+         reverse(nums,0,nums.length-1);
+         reverse(nums,0,k-1);
+         reverse(nums,k,nums.length-1);
+         }
+   public void reverse(int nums[],int start,int end){
+        while(start<end){
+            temp=nums[start];
+            nums[start]=nums[end];
+            nums[end]=temp;
+            start++;
+            end--;
+            }
+            }
+ *******************************************************************************************************************************************************
+ Q)Given an array arr[] of size N and an integer K, the task is to left rotate the array K indexes
+ ******************************************
+ LOGIC:
+ given={1,2,3,4,5,6,7} and k=2 o/p:{ 3,4,5,6,7,1,2}
+ step1:reverse entire array {7,6,5,4,3,2,1}
+ step2:as it is left rotation reverse last 2 elemnts---->{7,6,5,4,3,1,2}
+ step3:now reverse remaining elements---->{3,4,5,6,7,1,2}
+ ******************************************
+ CODE:
+ lass Solution
+{
+    void leftRotate(long arr[], int k,int n)
+    {
+        k=k%n;
+        if(k<0){
+            k=k+n;
+        }
+        reverse(arr,0,n-1);
+        reverse(arr,n-k,n-1);
+        reverse(arr,0,n-k-1);
+        }
+        public void reverse(long arr[],int start,int end){
+         while(start<end){
+            long temp=arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+            }
+            }
+            }
+     *************************************************************************************************************************************************
+
     
 
     
