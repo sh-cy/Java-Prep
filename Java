@@ -175,10 +175,38 @@ class solution{
           }
   }
 *************************************************************************************************************************************************
+Q)Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+****************************************
+LOGIC:
+given:{4,0,0,5,3}---->o/p:{4,5,3,0,0}
+step1: create one temp variable and take i=0 and j=0 initially 
+step2:check i!=0 if it is not equal to zero then store it in temp variable
+step3:make sure j is always equal to zero if j!=0 do j++
+step4:if i!=0 then swap j into i and store temp in j
+****************************************
+example exp:{4,0,0,5,3}--->intially i=4,j=4
+j++ and i++ as in arr[1] and arr[2] i==0 so increment it to 5 i.e at arr[3] now i is in 3rd postion and do j++ as in arr[1] it is j==0
+swap arr[1] with arr[3] then {4,5,0,0,3} and do j++ as j is at number:5 as j should always equal to 0 and i++ now i=3
+now swap i and j then{4,5,3,0,0}
+*****************************************
+CODE:
+class Solution {
+    public void moveZeroes(int[] nums) {
+      int temp;
+      int j=0;
+      for(int i=0;i<nums.length;i++){
+          if(nums[i]!=0 ){
+              temp=nums[i];
+              nums[i]=nums[j];
+              nums[j]=temp;
+              j++;
+          }
 
-    
+      }
 
-    
+        }
+}
+******************************************************************************************************************************************************
     
 
     
