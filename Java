@@ -221,7 +221,11 @@ class Solution{
        }
  } 
 ******************************************************************************************************************************************************
-
+Q)Given a binary array nums, return the maximum number of consecutive 1's in the array.
+*******************************************
+LOGIC:
+Take one maxs and count as 0
+loop the nums and if(nums[i]==0) then count=count+1 and compare max and count value elseif(i==0) then count=0 and decicde
     
 
     
