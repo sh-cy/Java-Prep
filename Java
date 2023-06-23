@@ -221,7 +221,38 @@ class Solution{
        }
  } 
 ******************************************************************************************************************************************************
-BINARY SEARCH:
+Q)Given an integer array nums and an integer val, remove all occurrences of val in nums in-place.
+The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
+
+Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
+
+Change the array nums such that the first k elements of nums contain the elements which are not equal to val. 
+The remaining elements of nums are not important as well as the size of nums.
+Return k.
+************************************
+LOGIC : 
+Lets consider an array [3,2,2,3] val=3 we want to the number which is not equal to val at first places 
+So first take a variable j=0 and loop in array i.e if we found a number not equal to val number while looping like in question 2 is in second
+position then we need to create a temp variable and store i value i.e 3 in temp and shift 2 to the postion of i and value of temp in j postion
+and increment j as j finally return j+1 value
+*************************************
+CODE:
+class Solution {
+    public int removeElement(int[] nums, int val) {
+       int j=0;
+       int temp;
+       for(int i=0;i<nums.length;i++){
+           if(nums[i]!=val){
+            temp=nums[i];
+            nums[i]=nums[j];
+            nums[j]=temp;
+            j++;
+           }
+       }
+return j;}
+}
+**********************************************************************************************************************************************
+Q)
 
     
 
