@@ -563,6 +563,45 @@ class Solution {
     }
 }
 **************************************************************************************************************
+ASCII CODE:
+A-Z:65 TO 90
+a-z:97 To 112
+space characters:32
+*********************************
+Q)Aman who is working at a software company forget the password of his Linkedin Account.But he knows the ASCII 
+values of his password in reverse order Help Aman to solve his issue
+NOTE:password only has alphabets and blank spaces
+*********************************
+METHOD IN PYTHON:
+first we need to take an input from user in the form of string and then we need to reverse the string using 
+slice operation and then we need to intilize the i=0 and then we have to  take while loop and check wheather 
+whether i value is less than len of string or not  and initilize x=s[i]+s[i+1] this selects 2 digits
+now we need to take a if and else conditions we have to take if(i==32)bcz 32 represents space and if its not a
+space we need to go for else if condition and check i is in range of 65 to 90 i.e elif in range(65,91) or 
+range(97,100) i.e till 99 which represents 2 digit number 
+if we wont have a number in 2 digits then we need to select 3 digits for that the condition is x=x+s[i+2] here x
+represents x[i]+x[i+1] we get 3 digit numbers and now char(int(x)) this will convert the int to char i.e alphabet 
+***********************************
+CODE:
+stri=input("Enter String:")
+s=stri[: : -1]
+i=0
+res=" "
+while(i<len(s)-1):
+  x=s[i]+s[i+1]
+  if(x=="32"):
+    res=res+" "
+  elif int(x) in range(65,91) or range(97,100):
+     res=res+chr(int(x))
+  else:
+     x=x+s[i+2]
+     res=res+chr(int(x))
+     i=i+1
+  i=i+2
+print(res)
+******************************************************************************************************************
+
+
 
 
 
