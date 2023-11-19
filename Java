@@ -599,7 +599,168 @@ while(i<len(s)-1):
      i=i+1
   i=i+2
 print(res)
-******************************************************************************************************************
+----------------------------------------------------------------------------------------------------------------
+      *
+   *  *  *
+*  *  *  *  *
+----------------------
+NOTE : ODD NUMBER CAN BE OF 2i+1 or 2i-1(as we are seeing this logic for no of stars to be printed in each row)
+----------------------
+METHOD:
+for we need to take an outerloop for number of rows i.e i from 1 to n
+and we need to write a logic for spaces and stars
+spaces-->as we know n=3 so n-i we should take for 1strow-->j<=3-1=2spaces for first row cols and for 
+2ndrow-->spaces 3-2=1 space and for 3rd row--> 3-3=0 spaces
+stars--->in first row we have 1 star for 1st row and 3stars for 2nd row ; 5 stars for 3rd row
+soo 2*i-1 is the logic for printing stars 1strow-->2*1-1=1star 2ndrow-->2*2-1=3stars 3rdrow-->2*3-1=5stars
+-----------------------
+CODE:
+public class Solution {
+    public static void nStarTriangle(int n) {
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=(2*i)-1;j++){
+                System.out.print("*");
+            }
+            
+        System.out.println();
+        }
+    
+     
+        }
+    }
+--------------------------------------------------------------------------------------------
+REVERSE PYRAMID
+* * * * *
+  * * *
+    *
+-------------------------
+METHOD:
+First we need to take rows count from i=n i.e n=3,2,1 for(int i=n;i<=i;i--)
+and now lets see logic for spaces and stars
+Spaces-->1st row -->n-i=3-3=0 spaces 2ndrow-->3-2=1 space 3rdrow-->3-1=2spaces
+stars--->1st row-->2*i-1=2*3-1=5 stars 2ndrow--->2*2-1=3stars 3rdrow-->2*1-1=1star
+--------------------------
+public class Solution {
+    public static void nStarTriangle(int n) {
+        for(int i=n;i>=1;i--){
+            for(int j=0;j<n-i;j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=(2*i-1);j++){
+                System.out.print("*");
+            }
+        System.out.println();
+        }
+
+        
+     }
+        
+    }
+-------------------------------------------------------------------------------------------------------------
+    *
+  * * *
+* * * * *
+* * * * *
+  * * *
+    *
+----------------------
+METHOD: just combine stright pyramid and reverse pyramid
+----------------------
+CODE:
+public class Solution {
+    public static void nStarDiamond(int n) {
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=2*i-1;j++){
+                 System.out.print("*");
+
+            }
+        System.out.println();
+        }
+        for(int i=n;i>=1;i--){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=2*i-1;j++){
+                System.out.print("*");
+            }
+        System.out.println();
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+*
+* *
+* * *
+* * 
+*
+-------------------------------------
+CODE:
+public class Solution {
+    public static void nStarTriangle(int n) {
+     for(int i=1;i<=n;i++){
+         for(int j=1;j<=i;j++){
+             System.out.print("*");
+         }
+          
+        System.out.println();
+     }
+     for(int i=1;i<=n;i++){
+         for(int j=n-1;j>=i;j--){
+               System.out.print("*");
+
+         }
+          System.out.println();
+     }
+    
+    }
+}
+-----------------------------------------------------------------------------------------------------------------
+1 
+0 1
+1 0 1
+0 1 0 1
+1 0 1 0 1
+0 1 0 1 0 1
+-----------------------
+METHOD: 
+first if we observe all odd positions are started with 1 and all even with 0
+so first we need to intilize start=1 after writing loop for row we need to take
+if condition i.e if(i%2==0) then start=1 else start =0
+after writing col loop start=1-start and then print start if i=1 it 1%2!=0 then 
+start=0 and after entering cols loop start=1-0 then its 1 as its in for loop of col
+it will alternate 
+------------------------
+CODE:
+public class Solution {
+    public static void nBinaryTriangle(int n) {
+        int start=1;
+       for(int i=1;i<=n;i++){
+           if(i%2==0){
+               start=1;
+           }
+           else{
+               start=0;
+           }
+           for(int j=0;j<i;j++){
+               start=1-start;
+               System.out.print(start+" ");
+           }
+        System.out.println();
+
+       }
+    }
+}
+------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 
