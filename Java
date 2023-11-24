@@ -757,7 +757,23 @@ public class Solution {
     }
 }
 ------------------------------------------------------------------------------------------------------------
-
+PYTHON:
+REVERSE A NUMBER:
+123
+r=0
+d=123%10
+r=r*10+d
+d=123//10
+-------------------------------
+JAVA:
+int number = 987654, reverse = 0;  
+while(number != 0)   
+{  
+int remainder = number % 10;  
+reverse = reverse * 10 + remainder;  
+number = number/10;  
+}  
+--------------------------------
 
 
 
